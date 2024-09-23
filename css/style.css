@@ -214,13 +214,15 @@ h1 {
 }
 
 #settings-form {
-    visibility: hidden;
-    width: 80%;
+    visibility: hidden; /* Par défaut, le formulaire est caché */
+    width: 300px;
+    height: auto;
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     position: absolute;
-    top: 10px;
+    top: -100px;
+    z-index: 3; /* Z-index élevé pour qu'il soit au-dessus du bouton close */
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
 }
