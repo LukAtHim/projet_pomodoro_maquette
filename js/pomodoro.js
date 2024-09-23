@@ -59,14 +59,6 @@ startBtn.addEventListener('click', () => {
     setInterval(funcUpdateTimer, 1000)
 })
 
-const pauseBtn = document.getElementById('btn-pause')
-pauseBtn.addEventListener('click', () => {
-    isPaused = true
-    
-    body.classList.remove('timer-running')
-    body.classList.add('timer-paused')
-})
-
 const resetBtn = document.getElementById('btn-reset')
 resetBtn.addEventListener('click', () => {
     location.reload()
@@ -83,7 +75,7 @@ closeBtn.addEventListener('click', () => {
 })
 
 /**
- * Function
+ * Function to update pomodoro
  */
 
 function funcUpdateTimer() {
