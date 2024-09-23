@@ -1,0 +1,341 @@
+/* Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Main Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: red;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+body.rest-mode #pomodoro-bg {
+    filter: blur(5px) grayscale(0.5) brightness(0.5);
+}
+
+p, h1 {
+    color: white;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+.panel, .circle, .timer {
+    margin: 30px auto;
+}
+
+.panel {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    width: 80%;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 5px #70130e;
+}
+
+.panel p {
+    opacity: 0.8;
+    transition: 1s ease-in;
+    font-size: 1.5rem;
+}
+
+.panel p.active {
+    opacity: 1;
+    color: #c8e8b5;
+}
+
+/* Pomodoro Timer */
+#pomodoro {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    height: 60%;
+    margin: 0 auto;
+}
+
+#timer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.circle-timer {
+    width: 250px;
+    height: 250px;
+}
+
+.circle-background {
+    stroke: rgba(255, 255, 255, 0.5);
+    stroke-width: 7;
+    fill: none;
+}
+
+.circle-progress {
+    stroke: rgb(255, 88, 88);
+    stroke-width: 7;
+    stroke-linecap: round;
+    stroke-dasharray: 283;
+    fill: none;
+    transform-origin: 50% 50%;
+    transform: rotate(-90deg);
+}
+
+#timer-time, #timer-pause, #timer-rest, #timer-work {
+    fill: rgb(255, 255, 255);
+}
+
+#timer-time {
+    text-anchor: middle;
+}
+
+#timer-pause, #timer-rest, #timer-work {
+    text-anchor: middle;
+    opacity: 0;
+}
+
+#timer-function {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#function-btn {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#function-btn button {
+    background-color: rgb(255, 88, 88);
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn-pause, #btn-start {
+    transform: translateX(-50%);
+}
+
+#btn-pause {
+    z-index: 1;
+}
+
+#btn-start {
+    z-index: 2;
+}
+
+#btn-reset {
+}
+
+#function-settings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+#function-settings button {
+    background-color: rgb(255, 88, 88);
+    border: none;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    font-size: 24px;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+
+#settings-form {
+    visibility: hidden;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    top: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+#settings-form p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#settings-form label {
+    font-size: 16px;
+    color: rgb(70, 70, 70);
+}
+
+#settings-form input {
+    width: 50px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 5px;
+}
+
+body.timer-running #btn-start, body.rest-mode #btn-start {
+    opacity: 0;
+    visibility: hidden;
+}
+
+body.timer-paused #btn-start {
+    opacity: 1;
+    visibility: visible;
+}
+
+body.timer-paused:not(.rest-mode) #timer-pause, body.rest-mode #timer-rest, body.rest-mode.timer-paused #timer-pause, body:not(.rest-mode) #timer-work {
+    opacity: 1;
+}
+
+body.rest-mode.timer-paused #timer-rest, body.timer-paused #timer-work {
+    opacity: 0;
+}
+
+body.settings-open #btn-close, body.settings-open #settings-form {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+body:not(.settings-open) #btn-close, body:not(.settings-open) #settings-form {
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    .panel {
+        width: 90%;
+        padding: 15px;
+    }
+
+    #function-btn button {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    .circle-timer {
+        width: 200px;
+        height: 200px;
+    }
+
+    #function-settings button {
+        width: 35px;
+        height: 35px;
+        font-size: 24px;
+    }
+
+    #settings-form input {
+        width: 45px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    .panel {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .circle-timer {
+        width: 180px;
+        height: 180px;
+    }
+
+    #function-btn button {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+
+    #function-settings button {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+    }
+
+    #settings-form input {
+        width: 40px;
+    }
+}
