@@ -1,8 +1,6 @@
 /**
  * Variable declaration
  */
-
-
 const body = document.body
 
 const inputWorkDuration = document.getElementById('work-duration')
@@ -23,7 +21,6 @@ funcUpdateProgress()
 /**
  * Update Settings
  */
-
 inputWorkDuration.addEventListener('change', () => {
     workDuration = inputWorkDuration.value * 60
     if(isWorking) {
@@ -41,9 +38,8 @@ inputRestDuration.addEventListener('change', () => {
 })
 
 /**
- * Button 
+ * Button listener
  */
-
 const startBtn = document.getElementById('btn-start')
 startBtn.addEventListener('click', () => {
     isPaused = false
@@ -77,7 +73,6 @@ closeBtn.addEventListener('click', () => {
 /**
  * Function to update pomodoro
  */
-
 function funcUpdateTimer() {
     if(!isPaused) {
         remainingTime--
