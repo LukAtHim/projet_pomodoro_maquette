@@ -8,8 +8,7 @@ body {
     text-align: center;
     font-size: 1.25rem;
     font-family: 'Roboto', sans-serif;
-    background-color: rgb(185, 1, 1);
-
+    background: #931F1D;    
 }
 
 .container {
@@ -25,7 +24,8 @@ h1 {
 }
 
 h1 {
-    font-size: 6rem;
+    padding-top: 50px;
+    font-size: 3rem;
 }
 
 header {
@@ -41,19 +41,20 @@ header {
     .panel {
         display: flex;
         justify-content: space-around;
+        align-items: center;
         text-align: center;
-        width: 30%;
+        width: 500px;
         border-radius: 25px;
-        -webkit-box-shadow: 0px 0px 15px 10px #70130e;
-        box-shadow: 0px 0px 15px 10px #70130e;
+        -webkit-box-shadow: 0px 0px 0px 10px #aabe80;
+        box-shadow: 0px 0px 0px 10px #aabe80;
     }
-
+    
     .panel p {
         opacity: 0.8;
-        transition: 1s ease-in;
-        font-size: 2rem;
-        margin-top: 10px;
+        font-size: 100%;
+        margin: 0;
     }
+    
 
     /**
     * Timer
@@ -64,17 +65,17 @@ header {
         margin-bottom: 40px;
     }
         .circle-timer {
-            max-width: 500px;
-            max-height: 500px;
+            max-width: 400px;
+            max-height: 400px;
 
         }
             .circle-background {
-                stroke: rgba(255, 0, 0, 0.5);
+                stroke: #aabe80;
                 stroke-width: 7;
                 fill: none;
             }
             .circle-progress {
-                stroke: rgb(144, 255, 88);
+                stroke: #dcebb4;
                 stroke-width: 7;
                 stroke-linecap: round;
                 stroke-dasharray: 283;
@@ -105,7 +106,7 @@ header {
             width: 50px;
             height: 50px;
             border: none;
-            background-color: #ff0000;
+            background-color: #aabe80;
             cursor: pointer;
             border-radius: 50%;
             display: flex;
@@ -166,7 +167,7 @@ header {
 
 @media screen and (max-width: 1024px) {
     .panel {
-        width: 50%;
+        width: 40%;
     }
 }
 
@@ -202,17 +203,42 @@ header {
 }
 
 @media screen and (min-width: 2560px) {
+    h1 {
+        font-size: 3em;
+    }
     .panel {
-        width: 100%;
+        width: 60%;
+        -webkit-box-shadow: 0px 0px 0px 20px #aabe80;
+        box-shadow: 0px 0px 0px 20px #aabe80;
+        border-radius: 30px;
     }
 
     .circle-timer {
-        max-width: 900px;
-        max-height: 900px;
+        max-width: 800px;
+        max-height: 800px;
     }
 
     .panel p {
-        font-size: 4rem;
+        font-size: 3rem;
+    }
+    
+    #function-btn {
+        padding-top: 30px;
+        width: 80px;
+        height: 80px;
+    }
+
+    #function-settings{
+        padding-top: 40px;
+    }
+
+    button {
+        width: 80px;
+        height: 80px;
+    }
+
+    .material-symbols-outlined{
+        font-size: 40px;
     }
 }
 
