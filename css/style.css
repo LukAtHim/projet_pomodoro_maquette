@@ -96,12 +96,20 @@ h1 {
     box-shadow: 0px 0px 0px 10px var(--color-secondary-one);
 }
 
+.panel p {
+    opacity: 0.8;
+    transition: 0.5s ease-in;
+
+}
+
 body.timer-running #work {
     font-weight: bold;
+    opacity: 1;
 }
 
 body.rest-mode #break {
     font-weight: bold;
+    opacity: 1;
 }
 
 /**
