@@ -2,6 +2,8 @@
 
 This is a simple and responsive Pomodoro Timer built with HTML, CSS, and JavaScript. The project allows users to set custom work and rest durations, start a countdown timer, and visualize their progress using an animated circular timer.
 
+### https://lukathim.github.io/projet_pomodoro_maquette/
+
 ## Features
 - **Customizable Durations**: Set your own work and rest durations via the settings panel.
 - **Responsive Design**: The layout adjusts seamlessly across different screen sizes, from mobile to desktop.
