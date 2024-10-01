@@ -124,13 +124,12 @@ function funcUpdateProgress() {
     const radius = 45; // Radius of the circular progress
     const circumference = 2 * Math.PI * radius; // Calculate circumference of the circle
 
-    let totalDuration; // Total duration based on current mode
+    let totalDuration;
 
-    // Determine total duration based on whether working or resting
     if (isWorking) {
-        totalDuration = workDuration; // Work duration
+        totalDuration = workDuration;
     } else {
-        totalDuration = restDuration; // Rest duration
+        totalDuration = restDuration;
     }
 
     // Calculate the offset for the stroke dash based on remaining time
