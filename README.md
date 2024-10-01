@@ -24,7 +24,6 @@ This file contains all the styles for the Pomodoro Timer. It includes:
 - Responsive styles to ensure the layout works well across various devices and screen sizes.
   
 **Key Features**:
-- Flexbox is used for layout management, making it responsive.
 - Circular SVG progress animation is handled through CSS for stroke offset changes.
 - Includes media queries to ensure proper scaling on smaller screens (768px and 480px).
 
@@ -45,3 +44,11 @@ This JavaScript file handles all the functionality of the Pomodoro Timer. It inc
 1. **Clone the repository**:
    ```bash
    git clone <repository-url>
+
+## Screenshots
+
+![Pomodoro Timer Desktop View](./img/screenshot-desktop.png)
+*Desktop view of the Pomodoro Timer*
+
+![Pomodoro Timer Mobile View](./img/screenshot-mobile.png)
+*Mobile view of the Pomodoro Timer*

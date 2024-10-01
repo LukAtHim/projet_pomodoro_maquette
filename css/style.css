@@ -1,271 +1,350 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+* Global css
+*/
+:root {
+    --color-primary: #FF0000;
+    --color-secondary-one: #97BE5A;
+    --color-secondary-two: #ffe8c5ce;
+
+}
+
 
 body {
     text-align: center;
     font-size: 1.25rem;
     font-family: 'Roboto', sans-serif;
-    background: #931F1D;    
+    color: white;
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--color-primary);
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+
+/**
+* Panel css
+*/
+.panel {
+    margin: 3rem;
+    padding: 5px;
+    width: 80%;
+    max-width: 400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    border-radius: 25px;
+    -webkit-box-shadow: 0px 0px 0px 10px var(--color-secondary-one);
+    box-shadow: 0px 0px 0px 10px var(--color-secondary-one);
+}
+
+body.timer-running #work {
+    font-weight: bold;
+}
+
+body.rest-mode #break {
+    font-weight: bold;
+}
+
+/**
+ * Timer css
+ */
+#timer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 420px;
+}
+
+.circle-timer {
+    width: 420px;
+    max-width: 420px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.circle-background, .circle-progress {
+    stroke-width: 7;
+    fill: none;
+}
+
+.circle-background {
+    stroke: var(--color-secondary-one);
+}
+
+.circle-progress {
+    stroke: var(--color-secondary-two);
+    stroke-linecap: round;
+    stroke-dasharray: 283;
+    transform-origin: 50% 50%;
+    transform: rotate(-90deg);
+}
+
+#timer-time {
+    fill: rgb(255, 255, 255);
+    text-anchor: middle;
+}
+
+/**
+* Button css
+*/
+
+#function-btn, #form-btn {
+    position: relative;
+    width: 50px; 
+    height: 50px;
     margin: auto;
-    max-width: 1600px;
-    width: 100%;
-    height: 100%;
+    transform: translateY(-50%);
 }
-
-p,
-h1 {
-    color: #eaf1f2;
-}
-
-h1 {
-    padding-top: 50px;
-    font-size: 3rem;
-}
-
-header {
-    width: 100%;
-}
-
-    .panel,
-    .circle,
-    .timer {
-        margin: 50px auto;
-    }
-
-    .panel {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        text-align: center;
-        width: 500px;
-        border-radius: 25px;
-        -webkit-box-shadow: 0px 0px 0px 10px #aabe80;
-        box-shadow: 0px 0px 0px 10px #aabe80;
-    }
     
-    .panel p {
-        opacity: 0.8;
-        font-size: 100%;
-        margin: 0;
-    }
-    
-
-    /**
-    * Timer
-    */
-    #timer {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 40px;
-    }
-        .circle-timer {
-            max-width: 400px;
-            max-height: 400px;
-
-        }
-            .circle-background {
-                stroke: #aabe80;
-                stroke-width: 7;
-                fill: none;
-            }
-            .circle-progress {
-                stroke: #dcebb4;
-                stroke-width: 7;
-                stroke-linecap: round;
-                stroke-dasharray: 283;
-                fill: none;
-                transform-origin: 50% 50%;
-                transform: rotate(-90deg);
-            }
-        #timer-time {
-            fill: rgb(255, 255, 255);
-            text-anchor: middle;
-        }
-
-    #timer-function {
-        justify-content: center;
-        align-items: center;
-    }
-
-    #function-btn {
-        position: relative;
-        width: 50px; 
+    button {
+        position: absolute;
+        width: 50px;
         height: 50px;
-        margin: auto;
-        transform: translateY(-50%);
-    }
-        
-        button {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            border: none;
-            background-color: #aabe80;
-            cursor: pointer;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-        }
-        
-        .material-symbols-outlined {
-            font-size: 24px;
-            color: #eaf1f2;
-        }
-
-    #function-settings {
+        border: none;
+        background-color: var(--color-secondary-one);
+        cursor: pointer;
+        border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 0;
-        margin-top: 1em;
-        position: relative;
+        font-size: 24px;
+    }
+    
+    .material-symbols-outlined {
+        font-size: 24px;
+        color: white;
     }
 
-        #settings-form {
-            width: 300px;
-            height: auto;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 10px;
-            border-radius: 10px;
-            position: absolute;
-            top: -160px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-        }
-        
-        #settings-form p {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        #settings-form label {
-            font-size: 16px;
-            color: rgb(70, 70, 70);
-        }
-        
-        #settings-form input {
-            width: 50px;
-            text-align: center;
-            padding: 5px;
-            border: 1px solid rgb(200, 200, 200);
-            border-radius: 5px;
-        }
-        
+
+/**
+* Form css
+*/
+
+#function-settings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    margin-top: 1em;
+    position: relative;
+}
+
+#settings-form {
+    position: absolute; 
+    bottom: 5rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    width: 20rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#settings-form label {
+    font-size: 1rem;
+    color: #444;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+#settings-form input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+#settings-form input:focus {
+    border-color: #666;
+    outline: none;
+}
+
+
+
+
+
 /**
 * Media querries
 */
-
-@media screen and (max-width: 1024px) {
-    .panel {
-        width: 40%;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .container {
-        padding-top: 30px;
-    }
-
-    .container,
-    .panel {
-        width: 90%;
-    }
-
+/* Responsive for 4K (min-width: 3840px) */
+@media (min-width: 2560px) {
     h1 {
-        font-size: 2em;
+        font-size: 150px;
     }
 
     .panel {
-        max-width: 500px;
-    }
-    
-    .circle {
-        width: 250px;
-        height: 250px;
-
+        max-width: 1000px;
+        width: 1000px;
+        font-size: 50px;
     }
 
-    .timer {
-        width: 265px;
-        height: 265px;
-    }
 
-    .time p {
-        font-size: 4rem;
-    }
-}
-
-@media screen and (min-width: 2560px) {
-    h1 {
-        font-size: 3em;
-    }
-    .panel {
-        width: 60%;
-        -webkit-box-shadow: 0px 0px 0px 20px #aabe80;
-        box-shadow: 0px 0px 0px 20px #aabe80;
-        border-radius: 30px;
-    }
-
-    .circle-timer {
+    #timer {
+        width: 800px;
         max-width: 800px;
-        max-height: 800px;
-    }
-
-    .panel p {
-        font-size: 3rem;
     }
     
-    #function-btn {
-        padding-top: 30px;
-        width: 80px;
-        height: 80px;
+    .circle-timer {
+        width: 800px;
+        max-width: 800px;
+        height: auto;
     }
 
-    #function-settings{
-        padding-top: 40px;
+    #timer-time {
+        font-size: 1.25rem;
     }
 
+    /* Agrandir les boutons pour les écrans 4K */
     button {
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
+        font-size: 36px; /* Plus gros icône */
     }
 
-    .material-symbols-outlined{
-        font-size: 40px;
-    }
-
-    #settings-form {
-        justify-content: center;
-        width: 600px;
-        height: 155px;
-    }
-    #settings-form p {
-        margin-bottom: 35px;
-        padding-left: 20px;
+    .material-symbols-outlined {
+        font-size: 36px; /* Ajustement de l'icône */
     }
 
     #settings-form label {
-        font-size: 30px;
+        font-size: 2.25rem;
     }
 
     #settings-form input {
-        font-size: 30px;
-        width: 100px;
-        height: 50px;
-        
+        font-size: 2.25rem;
+    }
+
+    #form-btn{
+        padding-top: 120px;
+    }
+
+
+}
+
+
+/* Responsive for tablets */
+@media (max-width: 768px) {
+    #settings-form {
+        max-width: 20rem;
+        padding: 1rem;
+    }
+
+    #settings-form input {
+        font-size: 0.9rem;
+        padding: 0.65rem;
+    }
+
+    #timer {
+        width: 100%;
+        max-width: 405px;
+    }
+    
+    .circle-timer {
+        max-width: 405px;
+        width: 405px;
+        height: auto;
     }
 
 }
+
+/* Responsive for phones */
+@media (max-width: 480px) {
+    #settings-form {
+        width: 15rem;
+        padding: 0.75rem;
+    }
+
+    #settings-form label {
+        font-size: 0.9rem;
+    }
+
+    #settings-form input {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    #timer {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .circle-timer {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+}
+
+
+
 
 /**
 * Interactive css
