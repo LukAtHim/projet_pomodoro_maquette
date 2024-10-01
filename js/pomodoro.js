@@ -9,8 +9,11 @@ const inputRestDuration = document.getElementById('rest-duration')
 const timerTime = document.getElementById('timer-time')
 const circleProgress = document.querySelector('.circle-progress')
 
-let workDuration = inputWorkDuration.value * 60
-let restDuration = inputRestDuration.value * 60
+let workDuration = (localStorage.getItem('workDuration') || inputWorkDuration.value) * 60
+let restDuration = (localStorage.getItem('restDuration') || inputRestDuration.value) * 60
+
+inputWorkDuration.value = localStorage.getItem('workDuration') || inputWorkDuration.value
+inputRestDuration.value = localStorage.getItem('restDuration') || inputRestDuration.value
 
 let isPaused = true
 let isWorking = true
@@ -23,6 +26,8 @@ funcUpdateProgress()
  */
 inputWorkDuration.addEventListener('change', () => {
     workDuration = inputWorkDuration.value * 60
+    localStorage.setItem('workDuration', inputWorkDuration.value)
+
     if(isWorking) {
         remainingTime = workDuration
         funcUpdateProgress()
@@ -31,6 +36,8 @@ inputWorkDuration.addEventListener('change', () => {
     
 inputRestDuration.addEventListener('change', () => {
     restDuration = inputRestDuration.value * 60
+    localStorage.setItem('restDuration', inputRestDuration.value)
+
     if(isWorking) {
         remainingTime = workDuration
         funcUpdateProgress()
