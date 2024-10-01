@@ -3,63 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
+    <!-- Preconnect to Google Fonts for improved loading performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Link to Google Fonts (Roboto) for typography -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     
+    <!-- Link to Material Symbols font for icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
+    <!-- Link to custom CSS file for additional styling -->
     <link rel="stylesheet" href="./css/style.css">
     
+    <!-- Link to custom JavaScript file for Pomodoro functionality -->
     <script defer src="./js/pomodoro.js"></script>
 
     <title>Pomodoro</title>
 </head>
 <body>
+    <!-- Main container for the content -->
     <div class="container">
         <header>
             <h1>TIMER POMODORO</h1>
         </header>
 
+        <!-- Panel displaying labels for work and break -->
         <div class="panel">
             <p id="work">Travail</p>
             <p id="break">Pause</p>
         </div>
 
+        <!-- Container for the timer display -->
         <div id="pomodoro">
+            <!-- Timer element -->
             <div id="timer">
-                <svg class="circle-timer" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="45" class="circle-background"></circle>
-                    <circle cx="50" cy="50" r="45" class="circle-progress"></circle>
-                    <text id="timer-time" x="50" y="50" dy=".3rem" font-size="18">25:00</text>
+                <svg class="circle-timer" viewBox="0 0 100 100"> <!-- SVG for circular timer -->
+                    <circle cx="50" cy="50" r="45" class="circle-background"></circle> <!-- Background circle -->
+                    <circle cx="50" cy="50" r="45" class="circle-progress"></circle> <!-- Progress circle -->
+                    <text id="timer-time" x="50" y="50" dy=".3rem" font-size="18">25:00</text> <!-- Timer display text -->
                 </svg>
             </div>
         </div>
 
-            <div id="timer-function">
-                <div id="function-btn">
-                    <button id="btn-start"><span class="material-symbols-outlined">play_arrow</span></button>
-                    <button id="btn-reset"><span class="material-symbols-outlined">restart_alt</span></button>
-                </div>
-                <div id="function-settings">
-                    <form id="settings-form">
-                        <p>
-                            <label for="work-duration">Travail</label>
-                            <input type="number" name="work" id="work-duration" value="25" min="1"/>
-                        </p>
-                        <p>
-                            <label for="rest-duration">Détente</label>
-                            <input type="number" name="rest" id="rest-duration" value="5" min="1"/>
-                        </p>
-                    </form>
-                    <div id="form-btn">
-                        <button id="btn-settings"><span class="material-symbols-outlined">settings</span></button>
-                        <button id="btn-close"><span class="material-symbols-outlined">close</span></button>
-                    </div>
-                </div>
-            </div>    
+        <!-- Container for timer controls -->
+        <div id="timer-function">
+            <!-- Buttons for starting and resetting the timer -->
+            <div id="function-btn">
+                <button id="btn-start"><span class="material-symbols-outlined">play_arrow</span></button>
+                <button id="btn-reset"><span class="material-symbols-outlined">restart_alt</span></button>
+            </div>
 
-    </div>    
+            <!-- Container for timer settings -->
+            <div id="function-settings"> 
+                <form id="settings-form">
+                    <p>
+                        <label for="work-duration">Travail</label>
+                        <input type="number" name="work" id="work-duration" value="25" min="1"/>
+                    </p>
+                    <p>
+                        <label for="rest-duration">Détente</label>
+                        <input type="number" name="rest" id="rest-duration" value="5" min="1"/>
+                    </p>
+                </form>
+                <!-- Buttons for settings actions -->
+                <div id="form-btn"> 
+                    <button id="btn-settings"><span class="material-symbols-outlined">settings</span></button>
+                    <button id="btn-close"><span class="material-symbols-outlined">close</span></button>
+                </div>
+            </div>
+
+        </div>
+    </div> 
 </body>
 </html>
