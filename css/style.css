@@ -2,6 +2,8 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+
+/*Reset (no need)*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -55,7 +57,6 @@ table {
     --color-secondary-two: #ffe8c5ce;
 
 }
-
 
 body {
     text-align: center;
@@ -157,7 +158,6 @@ body.rest-mode #break {
 /**
 * Button css
 */
-
 #function-btn, #form-btn {
     position: relative;
     width: 50px; 
@@ -185,11 +185,9 @@ body.rest-mode #break {
         color: white;
     }
 
-
 /**
 * Form css
 */
-
 #function-settings {
     display: flex;
     justify-content: center;
@@ -235,10 +233,6 @@ body.rest-mode #break {
     border-color: #666;
     outline: none;
 }
-
-
-
-
 
 /**
 * Media querries
@@ -297,7 +291,6 @@ body.rest-mode #break {
 
 }
 
-
 /* Responsive for tablets */
 @media (max-width: 768px) {
     #settings-form {
@@ -350,9 +343,6 @@ body.rest-mode #break {
         height: auto;
     }
 }
-
-
-
 
 /**
 * Interactive css

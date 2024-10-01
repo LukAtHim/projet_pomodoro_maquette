@@ -9,12 +9,14 @@ const inputRestDuration = document.getElementById('rest-duration')
 const timerTime = document.getElementById('timer-time')
 const circleProgress = document.querySelector('.circle-progress')
 
+//use of local storage
 let workDuration = (localStorage.getItem('workDuration') || inputWorkDuration.value) * 60
 let restDuration = (localStorage.getItem('restDuration') || inputRestDuration.value) * 60
 
 inputWorkDuration.value = localStorage.getItem('workDuration') || inputWorkDuration.value
 inputRestDuration.value = localStorage.getItem('restDuration') || inputRestDuration.value
 
+// had a pause function on the previous pomodoro but decide to delete it on the html to follow the mockup 
 let isPaused = true
 let isWorking = true
 let remainingTime = workDuration
@@ -104,7 +106,9 @@ function funcUpdateTimer() {
         funcUpdateProgress();
     }
 }
-
+/**
+ * Function to update time and circle progress
+ */
 function funcUpdateProgress() {
     const radius = 45
     const circumference = 2 * Math.PI * radius
@@ -121,10 +125,6 @@ function funcUpdateProgress() {
 
     circleProgress.style.strokeDashoffset = dashOffset
     timerTime.textContent = toRightFormatTime(remainingTime);
-}
-
-function funcSettingsChanged(){
-
 }
 
 function toRightFormatTime(sec) {
