@@ -172,17 +172,20 @@ header {
 }
 
 @media screen and (max-width: 768px) {
+    .container {
+        padding-top: 30px;
+    }
+
     .container,
     .panel {
         width: 90%;
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 2em;
     }
 
     .panel {
-        font-size: 1.5rem;
         max-width: 500px;
     }
     
@@ -240,6 +243,12 @@ header {
     .material-symbols-outlined{
         font-size: 40px;
     }
+
+    #settings-form {
+        width: 600px;
+        height: auto;
+    }
+
 }
 
 /**
