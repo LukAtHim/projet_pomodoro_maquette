@@ -1,56 +1,50 @@
 # Pomodoro Timer
 
-This is a simple and responsive Pomodoro Timer built with HTML, CSS, and JavaScript. The project allows users to set custom work and rest durations, start a countdown timer, and visualize their progress using an animated circular timer.
+Ceci est un **Pomodoro Timer** simple et responsive construit avec **HTML, CSS** et **JavaScript**. Ce projet permet aux utilisateurs de définir des durées personnalisées pour les périodes de travail et de repos, de lancer un compte à rebours, et de visualiser leur progression grâce à un timer circulaire animé.
 
-### https://lukathim.github.io/projet_pomodoro_maquette/
+### [Lien vers le projet](https://lukathim.github.io/projet_pomodoro_maquette/)
 
-## Features
-- **Customizable Durations**: Set your own work and rest durations via the settings panel.
-- **Responsive Design**: The layout adjusts seamlessly across different screen sizes, from mobile to desktop.
-- **Visual Progress**: The circular progress indicator dynamically updates as time counts down.
-- **Persistent Settings**: The timer stores the user's work and rest durations using local storage so settings persist across sessions.
+## Fonctionnalités
+- **Durées personnalisables** : Configurez vos propres durées de travail et de repos via le panneau de paramètres.
+- **Design responsive** : Le layout s’adapte parfaitement à différentes tailles d’écran, du mobile au bureau.
+- **Progression visuelle** : L’indicateur de progression circulaire se met à jour dynamiquement au fur et à mesure que le temps s'écoule.
+- **Paramètres persistants** : Le timer enregistre les durées de travail et de repos de l'utilisateur dans le stockage local, ce qui permet aux paramètres de persister entre les sessions.
 
-## Files
+## Fichiers
 
 ### 1. `index.html`
-This is the main HTML file that defines the structure of the Pomodoro Timer. It includes:
-- The header displaying the title of the timer.
-- The panel to display "Work" and "Rest" status.
-- The SVG-based circular timer.
-- Buttons for starting the timer, resetting, and opening the settings form.
+Il s'agit du fichier HTML principal qui définit la structure du Pomodoro Timer. Il inclut :
+- L'en-tête affichant le titre du timer.
+- Le panneau pour afficher l'état "Travail" et "Repos".
+- Le timer circulaire basé sur SVG.
+- Des boutons pour démarrer le timer, réinitialiser, et ouvrir le formulaire de paramètres.
 
 ### 2. `style.css`
-This file contains all the styles for the Pomodoro Timer. It includes:
-- Global reset and layout styles.
-- Specific styles for the timer panel, buttons, and settings form.
-- Responsive styles to ensure the layout works well across various devices and screen sizes.
+Ce fichier contient tous les styles pour le Pomodoro Timer. Il inclut :
+- Styles de réinitialisation et de mise en page globaux.
+- Styles spécifiques pour le panneau du timer, les boutons et le formulaire de paramètres.
+- Styles responsives pour garantir que la mise en page fonctionne bien sur divers appareils et tailles d'écran.
   
-**Key Features**:
-- Circular SVG progress animation is handled through CSS for stroke offset changes.
-- Includes media queries to ensure proper scaling on smaller screens (768px and 480px).
+**Fonctionnalités clés** :
+- L'animation de progression circulaire SVG est gérée via CSS pour les changements d'offset du stroke.
+- Inclut des media queries pour assurer un bon redimensionnement sur les petits écrans (768px et 480px).
 
 ### 3. `pomodoro.js`
-This JavaScript file handles all the functionality of the Pomodoro Timer. It includes:
-- Timer countdown logic for both work and rest periods.
-- Functions to update the circular progress dynamically.
-- Event listeners for start, reset, and settings buttons.
-- Local storage functionality to save and load the work and rest durations set by the user.
+Ce fichier JavaScript gère toute la fonctionnalité du Pomodoro Timer. Il inclut :
+- Logique de compte à rebours pour les périodes de travail et de repos.
+- Fonctions pour mettre à jour dynamiquement la progression circulaire.
+- Écouteurs d'événements pour les boutons de démarrage, de réinitialisation et de paramètres.
+- Fonctionnalité de stockage local pour sauvegarder et charger les durées de travail et de repos définies par l'utilisateur.
 
-**Main Functions**:
-- `funcUpdateTimer()`: Handles the countdown for the timer.
-- `funcUpdateProgress()`: Updates the circular progress based on the remaining time.
-- Local storage integration to persist user settings.
+**Fonctions principales** :
+- `funcUpdateTimer()`: Gère le compte à rebours du timer.
+- `funcUpdateProgress()`: Met à jour la progression circulaire en fonction du temps restant.
+- Intégration de stockage local pour persister les paramètres utilisateur.
 
-## How to Use
+## Captures d'écran
 
-1. **Clone the repository**:
-   ```bash
-   git clone <repository-url>
+![Vue de bureau du Pomodoro Timer](./img/screenshot-desktop.png)
+*Vue de bureau du Pomodoro Timer*
 
-## Screenshots
-
-![Pomodoro Timer Desktop View](./img/screenshot-desktop.png)
-*Desktop view of the Pomodoro Timer*
-
-![Pomodoro Timer Mobile View](./img/screenshot-mobile.png)
-*Mobile view of the Pomodoro Timer*
+![Vue mobile du Pomodoro Timer](./img/screenshot-mobile.png)
+*Vue mobile du Pomodoro Timer*
